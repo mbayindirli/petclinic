@@ -8,10 +8,10 @@
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.practice</groupId>
-    <artifactId>practice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <groupId>com.petclinic</groupId>
+    <artifactId>petclinic</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <name>petclinic</name>
     <description>Practice project for Spring Boot</description>
 
     <properties>
