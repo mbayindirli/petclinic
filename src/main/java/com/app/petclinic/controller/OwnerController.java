@@ -5,6 +5,8 @@ import com.app.petclinic.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class OwnerController {
    @Autowired
@@ -13,6 +15,10 @@ public class OwnerController {
    @RequestMapping(value="/find-one/{ownerId}",method = RequestMethod.GET)
    public Owner findOwner(@PathVariable Long ownerId) {
         return ownerService.findById(ownerId);
+    }
+    @RequestMapping(value = "/find-by-last-name",method = RequestMethod.GET)
+    public List<Owner> findByLastName(@RequestParam("ln") String lastName){
+    return ownerService.findByLastName(lastName);
     }
 
    @RequestMapping(value = "/pcs")
