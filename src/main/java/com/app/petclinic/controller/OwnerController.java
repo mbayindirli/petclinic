@@ -1,6 +1,7 @@
 package com.app.petclinic.controller;
 
 import com.app.petclinic.model.Owner;
+import com.app.petclinic.request.OwnerRequest;
 import com.app.petclinic.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +30,13 @@ public class OwnerController {
     @RequestMapping(value="/create-owner",method = RequestMethod.POST)
     public Owner create(@RequestBody Owner owner){
        return ownerService.createOwner(owner);
+    }
+    @RequestMapping(value = "/update-owner",method = RequestMethod.PUT)
+    public Owner updateOwner(@RequestBody OwnerRequest ownerRequest ){
+       Owner owner1=ownerService.findById(ownerRequest.getId());
+       owner1.setFirstName(ownerRequest.getFirstName());
+       owner1.setLastName(ownerRequest.getLastName());
+
+       return ownerService.updateOwner(owner1);
     }
 }

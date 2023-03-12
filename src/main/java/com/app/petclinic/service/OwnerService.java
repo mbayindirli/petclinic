@@ -7,5 +7,7 @@ import java.util.List;
 public interface OwnerService {
     Owner findById(Long id);
     Owner createOwner(Owner owner);
+    Owner updateOwner(Owner owner);
     List<Owner> findByLastName (String lastName);
+
 }

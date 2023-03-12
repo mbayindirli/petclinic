@@ -23,6 +23,11 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
+    public Owner updateOwner(Owner owner) {
+        return ownerRepository.saveAndFlush(owner);
+    }
+
+    @Override
     public List<Owner> findByLastName(String lastName) {
         return ownerRepository.findByLastName(lastName);
     }
