@@ -39,4 +39,8 @@ public class OwnerController {
 
        return ownerService.updateOwner(owner1);
     }
+    @RequestMapping(value = "/delete-owner/{id}",method = RequestMethod.DELETE)
+    public void deleteOwner(@PathVariable Long id){
+        ownerService.deleteOwner(id);
+    }
 }

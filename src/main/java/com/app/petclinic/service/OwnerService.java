@@ -9,5 +9,6 @@ public interface OwnerService {
     Owner createOwner(Owner owner);
     Owner updateOwner(Owner owner);
     List<Owner> findByLastName (String lastName);
+    void deleteOwner(Long id);
 
 }

@@ -31,4 +31,9 @@ public class OwnerServiceImpl implements OwnerService {
     public List<Owner> findByLastName(String lastName) {
         return ownerRepository.findByLastName(lastName);
     }
+
+    @Override
+    public void deleteOwner(Long id) {
+         ownerRepository.deleteById(id);
+    }
 }
